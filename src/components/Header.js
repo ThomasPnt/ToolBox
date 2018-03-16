@@ -27,7 +27,7 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="header">
                 <h2>ToolBox</h2>
                 <button className="btn btn-primary" onClick={this.props.showAddCategory}>Add Category</button>
                 {
