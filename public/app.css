@@ -1,5 +1,6 @@
 .header {
-  background-color: #F7EDD3;
+  background-color: #5E46D5;
+  color: white;
   width: 100%;
   padding-left: 10px;
   display: -webkit-inline-box;
@@ -10,13 +11,39 @@
 
 .header .title {
   width: 20%;
-}
-
-.header .addcat {
-  width: 55%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.header .addcat {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .addcat button {
+  color: white;
+  height: 40px;
+  font-size: 1rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  -webkit-appearance: none;
+  border-style: none;
+  background-color: #5bd0c7;
+  border: 1px solid #776942;
+}
+
+.header .addcat button:hover {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24), 0 5px 18px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24), 0 5px 18px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header .category {
+  width: 35%;
+  margin: auto;
+  text-align: center;
 }
 
 .header .search {
@@ -29,12 +56,6 @@
 .header .search input {
   height: 30px;
   margin: 0 auto;
-}
-
-.header button {
-  height: 35px;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 body {

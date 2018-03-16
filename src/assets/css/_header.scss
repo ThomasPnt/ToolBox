@@ -1,15 +1,36 @@
 .header {
-  background-color: #F7EDD3;
+  background-color: #5E46D5;
+  color: white;
   width: 100%;
   padding-left: 10px;
   display: inline-flex;
   margin: 0 auto;
   .title{
     width: 20%;
+    display: flex;
   }
   .addcat{
-    width: 55%;
+    width: 20%;
     display: flex;
+    button {
+      color: white;
+      height: 40px;
+      font-size: 1rem;
+      margin-top: auto;
+      margin-bottom: auto;
+      -webkit-appearance: none;
+      border-style:none;
+      background-color: #5bd0c7;
+      border: 1px solid #776942;
+    }
+    button:hover{
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 5px 18px 0 rgba(0,0,0,0.19);
+    }
+  }
+  .category{
+    width: 35%;
+    margin: auto;
+    text-align: center;
   }
   .search {
     width: 25%;
@@ -20,10 +41,5 @@
       height: 30px;
       margin: 0 auto;
     }
-  }
-  button {
-    height: 35px;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 }
