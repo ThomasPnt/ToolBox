@@ -17,6 +17,6 @@ const Router = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Router;

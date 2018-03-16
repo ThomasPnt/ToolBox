@@ -52,7 +52,6 @@ class SideBar extends React.Component {
                 }
                 <ul>
                     <li onClick={this.resetChange.bind(this)}><Link to="/">ALL CATEGORY</Link></li>
-                    <ul>
                     {this.props.category.map((category) =>
                         <li key={category.id} onClick={this.actualChange.bind(this)}>
                             <Link to={`/tool/${category.name}`}>
@@ -60,7 +59,6 @@ class SideBar extends React.Component {
                             </Link>
                         </li>
                         )}
-                    </ul>
                 </ul>
             </div>
         )

@@ -10,13 +10,14 @@ class Header extends React.Component {
         return (
             <div className="header">
                 <section className="title">
-                    <h2>ToolBox</h2>
+                    <h1>ToolBox</h1>
                 </section>
                 <section className="addcat">
-                <button onClick={this.props.showAddCategory}>Add Category</button>
-                    <h4>{this.props.Actual.actual ? this.props.Actual.actual : this.props.Actual}</h4>
+                    <button onClick={this.props.showAddCategory}><i className="material-icons">add</i>Add Category</button>
+                    <h3>{this.props.Actual.actual ? this.props.Actual.actual : this.props.Actual}</h3>
                 </section>
                 <section className="search">
+                    <i className="material-icons">search</i>
                     <input type="search"/>
                 </section>
             </div>
