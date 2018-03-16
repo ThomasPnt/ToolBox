@@ -1,3 +1,29 @@
-.header{
-  background-color: red;
+.header {
+  background-color: #F7EDD3;
+  width: 100%;
+  padding-left: 10px;
+  display: inline-flex;
+  margin: 0 auto;
+  .title{
+    width: 20%;
+  }
+  .addcat{
+    width: 55%;
+    display: flex;
+  }
+  .search {
+    width: 25%;
+    text-align: right;
+    padding-right: 50px;
+    margin: auto;
+    input {
+      height: 30px;
+      margin: 0 auto;
+    }
+  }
+  button {
+    height: 35px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }

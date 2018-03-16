@@ -4,12 +4,14 @@ import AddingCategory from "../reducers/AddingCategory";
 import ToolReducer from '../reducers/ToolReducer';
 import thunk from "redux-thunk";
 import AddingTool from "../reducers/AddingTool";
+import ActualCategoryReducer from "../reducers/ActualCategoryReducer";
 
 const reducers = combineReducers({
     CategoryReducer,
     AddingCategory,
     ToolReducer,
-    AddingTool
+    AddingTool,
+    ActualCategoryReducer
 });
 
 export default function ConfigStore() {

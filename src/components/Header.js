@@ -6,52 +6,34 @@ import {bindActionCreators} from "redux";
 
 class Header extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            tool: ''
-        }
-    }
-
-    handleChange(event) {
-        this.setState({tool: event.target.value})
-    }
-
-    handleSubmit(event) {
-        event.preventDefault();
-        var data = this.state.tool;
-        this.props.addCategory(data);
-        this.props.hideAddCategory();
-        this.setState({tool: ""});
-    }
-
     render() {
         return (
             <div className="header">
-                <h2>ToolBox</h2>
-                <button className="btn btn-primary" onClick={this.props.showAddCategory}>Add Category</button>
-                {
-                    this.props.Add &&
-                    <form className="form-inline" onSubmit={this.handleSubmit.bind(this)}>
-                        <input className="form-control col-sm-2" type="text" value={this.state.tool} onChange={this.handleChange.bind(this)} placeholder="New Category"/>
-                        <input className="btn btn-primary" type="submit"/>
-                    </form>
-                }
-                <input type="search"/>
+                <section className="title">
+                    <h2>ToolBox</h2>
+                </section>
+                <section className="addcat">
+                <button onClick={this.props.showAddCategory}>Add Category</button>
+                    <h4>{this.props.Actual.actual ? this.props.Actual.actual : this.props.Actual}</h4>
+                </section>
+                <section className="search">
+                    <input type="search"/>
+                </section>
             </div>
         )
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({addCategory, showAddCategory , hideAddCategory }, dispatch)
+    return bindActionCreators({addCategory, showAddCategory, hideAddCategory}, dispatch)
 }
 
 function mapStateToProps(state) {
     console.log(state);
     return {
         CategoryReducer: state.CategoryReducer,
-        Add: state.AddingCategory
+        Add: state.AddingCategory,
+        Actual: state.ActualCategoryReducer
     };
 }
 
