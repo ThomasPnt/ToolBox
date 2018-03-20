@@ -1,5 +1,13 @@
 @import "./assets/css/_header.scss";
+@import "./assets/css/_sidebar.scss";
+@import "./assets/css/_tool.scss";
+@import "./assets/css/_formtool.scss";
 
 body{
   margin: 0 auto;
+}
+
+*{
+  box-sizing: border-box;
+  overflow-y: hidden;
 }

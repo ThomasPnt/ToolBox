@@ -5,6 +5,8 @@
   padding-left: 10px;
   display: inline-flex;
   margin: 0 auto;
+  position: fixed;
+  z-index: 2;
   .title{
     width: 20%;
     display: flex;

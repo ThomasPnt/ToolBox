@@ -8,10 +8,12 @@ import ListTool from "./ListTool";
 class ToolContainer extends React.Component {
     render() {
         return (
-            <div>
-                <h2>Tool</h2>
-                <button className="btn btn-primary" onClick={this.props.showAddTool}>Add Tool</button>
-                {this.props.Add && <NewTool hide={this.props.hideAddTool}/>}
+            <div className="toolcontainer" id="scrollbar">
+                <div className="headcontainer">
+                    <h2>Tool</h2>
+                    <button className="submit" onClick={this.props.showAddTool}>Add Tool</button>
+                    {this.props.Add && <NewTool hide={this.props.hideAddTool}/>}
+                </div>
                 <ListTool/>
             </div>
         )

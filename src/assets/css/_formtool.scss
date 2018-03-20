@@ -1,0 +1,59 @@
+.formtool {
+  background-color: white;
+  box-shadow: 0 5px 5px #c5cacc;
+  width: 50%;
+  padding: 30px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  form {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    label {
+      margin: 10px 0px 5px 10px;
+      color: #585CA8;
+      font-weight: bolder;
+    }
+    input {
+      background-color: rgba(198, 202, 213, 0.25);
+      -webkit-appearance: none;
+      box-shadow: none;
+      outline: none;
+      border: 0px;
+      padding: 5px;
+    }
+    .submitool{
+      margin-top: 20px;
+      border: none;
+      padding: 5px;
+      background-color: #5bd0c7;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .select {
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      width: 100%;
+      text-align: right;
+      select {
+        -webkit-appearance: none;
+        border: none;
+        padding: 10px;
+        background-color: rgba(198, 202, 213, 0.25);
+        width: 100%;
+      }
+      i{
+        position: absolute;
+        right: 5px;
+        font-size: 30px;
+        top: 3px;      }
+    }
+    textarea {
+      background-color: rgba(198, 202, 213, 0.25);
+      border: 0px;
+    }
+  }
+}

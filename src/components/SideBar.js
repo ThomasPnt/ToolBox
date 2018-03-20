@@ -20,8 +20,10 @@ class SideBar extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         var data = this.state.tool;
-        this.props.addCategory(data);
-        this.props.hideAddCategory();
+        if(data.trim() !== ""){
+            this.props.addCategory(data);
+            this.props.hideAddCategory();
+        }
         this.setState({tool: ""});
     }
 
@@ -29,7 +31,9 @@ class SideBar extends React.Component {
         event.preventDefault();
         var data = document.location.pathname.substr(document.location.pathname.lastIndexOf('/') + 1);
         console.log(data);
-        this.props.actualCategory(data);
+        if(data.trim() !== "") {
+            this.props.actualCategory(data);
+        }
     }
 
     resetChange(event){
@@ -41,13 +45,13 @@ class SideBar extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="sidebar" id="style-1">
                 {
                     this.props.Add &&
-                    <form className="form-inline" onSubmit={this.handleSubmit.bind(this)}>
-                        <input className="form-control col-sm-2" type="text" value={this.state.tool}
+                    <form onSubmit={this.handleSubmit.bind(this)}>
+                        <input className="inputext" type="text" value={this.state.tool}
                                onChange={this.handleChange.bind(this)} placeholder="New Category"/>
-                        <input className="btn btn-primary" type="submit"/>
+                        <input className="inputsubmit" type="submit"/>
                     </form>
                 }
                 <ul>
