@@ -12,7 +12,7 @@ const ListTool = ({showDesc,selectTool}) => ({
         selectTool(data);
         showDesc();
     },
-    
+
     render() {
         console.log(this.props.See);
 

@@ -2,9 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 
 class CodeTool extends React.Component {
-    componentDidMount(){
-
-    }
+    //Doit etre styliser !
 
     render() {
         return (
