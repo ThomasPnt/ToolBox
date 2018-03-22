@@ -9,25 +9,19 @@ const ListTool = ({showDesc,selectTool}) => ({
     openDescription() {
         var data = document.location.pathname.substr(document.location.pathname.lastIndexOf('/') + 1);
         console.log(data);
-        showDesc();
         selectTool(data);
+        showDesc();
     },
-
-    //Creer un Reducer pour Gerer le state en true ou false si le boutton est cliqué et ensuite passez au component qui va servir de modal, la valeur de description!
-    //SeeCodeReducer.js
-    //<CodeTool description=tool.data.code/>
-
-
+    
     render() {
         console.log(this.props.See);
-        console.log(this.props.ActualTool);
 
         return (
             <div className="ListTools">
                 {this.props.Tool.map((tool) =>
                     <section className="newTool" key={tool.id}>
-                        <Link to={`/tool/${tool.id}`}>
-                            <button onClick={this.openDescription}><i className="material-icons">exit_to_app</i>More
+                        <Link to={`/tool/${tool.id}`} onClick={this.openDescription}>
+                            <button><i className="material-icons">exit_to_app</i>More
                             </button>
                         </Link>
                         <h4>{tool.data.title}</h4>
@@ -37,7 +31,7 @@ const ListTool = ({showDesc,selectTool}) => ({
                         </div>
                     </section>
                 )}
-                {this.props.See && <CodeTool description={this.props.ActualTool}/>}
+                {this.props.See && <CodeTool/>}
             </div>
         )
     }

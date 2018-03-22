@@ -11,7 +11,7 @@ const ToolReducer = (state = initialState, action) => {
                 Tool: state.Tool.concat(newTool)
             });
         case 'SELECT_TOOL':
-            let focus = state.Tool.find( tool => tool.id === action.payload)
+            let focus = state.Tool.filter( tool => tool.id === parseInt(action.payload, 10));
             return Object.assign({}, state, {
                 ActualTool: focus
             });

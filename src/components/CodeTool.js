@@ -1,12 +1,25 @@
 import React from 'react';
+import {connect} from "react-redux";
 
-export default class CodeTool extends React.Component {
+class CodeTool extends React.Component {
+    componentDidMount(){
+
+    }
+
     render() {
         return (
             <div>
                 <h3>Description</h3>
-                {this.props.description}
+                {this.props.actual.map(tool =>
+                    <p>{tool.data.code}</p>
+                )}
             </div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {actual: state.ToolReducer.ActualTool}
+}
+
+export default connect(mapStateToProps, null)(CodeTool);
