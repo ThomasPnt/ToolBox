@@ -7,6 +7,7 @@ const Router = () => {
         <div>
             <Switch>
                 <Route path='/' component={Global}>
+                    <Route path='/category/:catlId'/>
                     <Route path='/tool/:toolId'/>
                 </Route>
             </Switch>

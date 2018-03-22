@@ -12,6 +12,15 @@ export function addCategory(data) {
     }
 }
 
+export function selectTool(data) {
+    return {
+        type: 'SELECT_TOOL',
+        payload: data
+    }
+}
+
+export const showDesc = () => ({type: 'SHOW_DESC'});
+export const hideDesc = () => ({type: 'HIDE_DESC'});
 export const hideAddTool = () => ({type: 'HIDE_ADD_TOOL'});
 export const showAddTool = () => ({type: 'SHOW_ADD_TOOL'});
 export const hideAddCategory = () => ({type: 'HIDE_ADD_CATEGORY'});
