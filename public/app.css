@@ -344,6 +344,27 @@
   border: 0px;
 }
 
+.codeModal {
+  width: 70vw;
+  height: 70vh;
+  position: absolute;
+  background-color: white;
+  right: 7.5%;
+  -webkit-box-shadow: 11px 11px 10px 0px #c5cacc;
+          box-shadow: 11px 11px 10px 0px #c5cacc;
+}
+
+.codeModal section {
+  position: relative;
+}
+
+.codeModal section a {
+  position: absolute;
+  right: 2%;
+  font-size: 40px;
+  top: 5%;
+}
+
 body {
   margin: 0 auto;
 }

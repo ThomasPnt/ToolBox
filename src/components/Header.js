@@ -8,7 +8,7 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div className="header">
+            <div className="header ">
                 <section className="title">
                     <h1>ToolBox</h1>
                 </section>

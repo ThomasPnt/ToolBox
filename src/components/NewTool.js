@@ -45,7 +45,7 @@ class NewTool extends React.Component {
 
     render() {
         return (
-            <div className="formtool">
+            <div className="formtool ">
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label htmlFor="title">Title</label>
                     <input name="title" type="text" onChange={this.handleChangeTitle.bind(this)}/>

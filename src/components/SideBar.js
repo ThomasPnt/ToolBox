@@ -20,23 +20,18 @@ class SideBar extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         var data = this.state.tool;
-        if(data.trim() !== ""){
+        if (data.trim() !== "") {
             this.props.addCategory(data);
             this.props.hideAddCategory();
         }
         this.setState({tool: ""});
     }
 
-    actualChange(event) {
-        event.preventDefault();
-        var data = document.location.pathname.substr(document.location.pathname.lastIndexOf('/') + 1);
-        console.log(data);
-        if(data.trim() !== "") {
-            this.props.actualCategory(data);
-        }
+    actualChange(e) {
+        this.props.actualCategory(e);
     }
 
-    resetChange(event){
+    resetChange(event) {
         event.preventDefault();
         var data = "All Category";
         this.props.actualCategory(data);
@@ -57,12 +52,10 @@ class SideBar extends React.Component {
                 <ul>
                     <li onClick={this.resetChange.bind(this)}><Link to="/">ALL CATEGORY</Link></li>
                     {this.props.category.map((category) =>
-                        <li key={category.id} onClick={this.actualChange.bind(this)}>
-                            <Link to={`/category/${category.name}`}>
-                                  {category.name}
-                            </Link>
+                        <li key={category.id} onClick={this.actualChange.bind(this, category.name)}>
+                            {category.name}
                         </li>
-                        )}
+                    )}
                 </ul>
             </div>
         )
@@ -81,4 +74,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(SideBar)
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar)
