@@ -1,5 +1,5 @@
 .header {
-  background-color: #5E46D5;
+  background-color: #5D99C4;
   color: white;
   width: 100%;
   padding-left: 10px;
@@ -31,7 +31,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid #5bd0c7;
+  border: 1px solid #72C9E5;
   width: 35%;
   margin: auto;
   text-align: center;
@@ -49,7 +49,7 @@
   margin-bottom: auto;
   -webkit-appearance: none;
   border-style: none;
-  background-color: #5bd0c7;
+  background-color: #72C9E5;
   line-height: 30px;
   border-radius: 5px;
 }
@@ -119,7 +119,7 @@
   border: none;
   padding: 5px;
   margin: 5px;
-  background-color: #5bd0c7;
+  background-color: #72C9E5;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -135,6 +135,7 @@
 }
 
 .sidebar ul li {
+  color: black;
   text-transform: uppercase;
   font-size: 14px;
   padding: 5px 5px 5px 20px;
@@ -142,6 +143,7 @@
 
 .sidebar ul li a {
   text-decoration: none;
+  color: black;
 }
 
 .sidebar ul li:first-child {
@@ -149,6 +151,8 @@
   font-size: 18px;
   margin-bottom: 5px;
   padding: 5px 5px 5px 20px;
+  border-bottom: 1px dashed black;
+  border-color: rgba(0, 0, 0, 0.25);
 }
 
 .sidebar ul li:hover {
@@ -168,7 +172,7 @@
 #style-1::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #9697D5;
+  background-color: #72C9E5;
 }
 
 .toolcontainer {
@@ -196,7 +200,7 @@
   font-weight: bold;
   -webkit-appearance: none;
   border-style: none;
-  background-color: #5bd0c7;
+  background-color: #72C9E5;
   line-height: 30px;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -227,7 +231,7 @@
   border: none;
   font-size: 16px;
   color: white;
-  background-color: #5bd0c7;
+  background-color: #72C9E5;
   border-radius: 5px;
 }
 
@@ -270,7 +274,7 @@
 #scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #9697D5;
+  background-color: #72C9E5;
 }
 
 .formtool {
@@ -310,7 +314,7 @@
   margin-top: 20px;
   border: none;
   padding: 5px;
-  background-color: #5bd0c7;
+  background-color: #72C9E5;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -363,6 +367,7 @@
   right: 2%;
   font-size: 40px;
   top: 5%;
+  cursor: pointer;
 }
 
 body {
@@ -373,5 +378,6 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
