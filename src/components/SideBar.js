@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link} from 'react-router-dom';
-import {addCategory, filterTool, hideAddCategory, showAll} from "../actions/ActionTool";
+import {addCategory, filterTool, hideAddCategory} from "../actions/ActionTool";
 import {bindActionCreators} from "redux";
 import {actualCategory} from "../actions/ActionCategory";
 
@@ -15,10 +15,6 @@ class SideBar extends React.Component {
 
     handleChange(event) {
         this.setState({tool: event.target.value})
-    }
-
-    componentWillMount(){
-        this.props.showAll();
     }
 
     handleSubmit(event) {
@@ -70,7 +66,7 @@ class SideBar extends React.Component {
 
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({addCategory, hideAddCategory, actualCategory,filterTool, showAll}, dispatch)
+    return bindActionCreators({addCategory, hideAddCategory, actualCategory,filterTool}, dispatch)
 }
 
 function mapStateToProps(state) {

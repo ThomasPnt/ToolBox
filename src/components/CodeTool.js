@@ -4,7 +4,6 @@ import {bindActionCreators} from "redux";
 import {hideDesc} from "../actions/ActionTool";
 
 class CodeTool extends React.Component {
-    //Doit etre styliser !
     close(e) {
         e.preventDefault();
         this.props.hideDesc();
