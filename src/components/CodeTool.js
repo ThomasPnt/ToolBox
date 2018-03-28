@@ -10,12 +10,6 @@ class CodeTool extends React.Component {
         this.props.hideDesc();
     }
 
-    componentDidMount() {
-    }
-
-    componentWillUnmount() {
-    }
-
     render() {
         return (
             <div className="codeModal">

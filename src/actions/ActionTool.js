@@ -19,6 +19,14 @@ export function selectTool(data) {
     }
 }
 
+export function filterTool(data){
+    return {
+        type: 'FILTER_TOOL',
+        payload: data
+    }
+}
+
+export const showAll = () => ({type: 'SHOW_ALL'});
 export const showDesc = () => ({type: 'SHOW_DESC'});
 export const hideDesc = () => ({type: 'HIDE_DESC'});
 export const hideAddTool = () => ({type: 'HIDE_ADD_TOOL'});

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {selectTool, showDesc} from "../actions/ActionTool";
+import {selectTool, showAll, showDesc} from "../actions/ActionTool";
 import CodeTool from "./CodeTool";
 
 const ListTool = ({showDesc, selectTool}) => ({
@@ -15,10 +15,9 @@ const ListTool = ({showDesc, selectTool}) => ({
     disableAll() {
         console.log('test')
     },
-
     render() {
         console.log(this.props.See);
-
+        if(this.props.Tool && this.props.Tool.length > 0){
         return (
             <div className="ListTools ">
                 {this.props.Tool.map((tool, index) =>
@@ -35,20 +34,26 @@ const ListTool = ({showDesc, selectTool}) => ({
                 )}
                 {this.props.See && <CodeTool/>}
             </div>
-        )
+        )} else {
+            return (
+                <div>
+                    <p>No Card</p>
+                </div>
+            )
+        }
     }
 });
 
 function mapStateToProps(state) {
     return {
-        Tool: state.ToolReducer.Tool,
+        Tool: state.ToolReducer.filtered,
         See: state.SeeCodeReducer,
         ActualTool: state.ToolReducer.ActualTool
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({showDesc, selectTool}, dispatch)
+    return bindActionCreators({showDesc, selectTool, showAll}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListTool)

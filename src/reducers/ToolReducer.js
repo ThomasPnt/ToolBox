@@ -1,6 +1,7 @@
 const initialState = {
     ActualTool: [],
-    Tool: []
+    Tool: [],
+    filtered: []
 };
 
 const ToolReducer = (state = initialState, action) => {
@@ -11,9 +12,18 @@ const ToolReducer = (state = initialState, action) => {
                 Tool: state.Tool.concat(newTool)
             });
         case 'SELECT_TOOL':
-            let focus = state.Tool.filter( tool => tool.id === parseInt(action.payload, 10));
+            let focus = state.Tool.filter(tool => tool.id === parseInt(action.payload, 10));
             return Object.assign({}, state, {
                 ActualTool: focus
+            });
+        case 'FILTER_TOOL':
+            let filter = state.Tool.filter(tool => tool.data.category === action.payload);
+            return Object.assign({}, state, {
+                filtered: filter
+            });
+        case 'SHOW_ALL':
+            return Object.assign({}, state, {
+                filtered: state.Tool
             });
         default:
             return state

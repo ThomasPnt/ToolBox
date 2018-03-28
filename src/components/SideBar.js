@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link} from 'react-router-dom';
-import {addCategory, hideAddCategory} from "../actions/ActionTool";
+import {addCategory, filterTool, hideAddCategory, showAll} from "../actions/ActionTool";
 import {bindActionCreators} from "redux";
 import {actualCategory} from "../actions/ActionCategory";
 
@@ -17,6 +17,10 @@ class SideBar extends React.Component {
         this.setState({tool: event.target.value})
     }
 
+    componentWillMount(){
+        this.props.showAll();
+    }
+
     handleSubmit(event) {
         event.preventDefault();
         var data = this.state.tool;
@@ -29,16 +33,18 @@ class SideBar extends React.Component {
 
     actualChange(e) {
         this.props.actualCategory(e);
+        this.props.filterTool(e)
     }
 
     resetChange(event) {
         event.preventDefault();
         var data = "All Category";
         this.props.actualCategory(data);
+        this.props.showAll();
     }
 
-
     render() {
+
         return (
             <div className="sidebar" id="style-1">
                 {
@@ -64,13 +70,15 @@ class SideBar extends React.Component {
 
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({addCategory, hideAddCategory, actualCategory}, dispatch)
+    return bindActionCreators({addCategory, hideAddCategory, actualCategory,filterTool, showAll}, dispatch)
 }
 
 function mapStateToProps(state) {
     return {
         category: state.CategoryReducer,
         Add: state.AddingCategory,
+        Tool: state.ToolReducer.Tool,
+        Actual: state.ActualCategoryReducer
     };
 }
 
