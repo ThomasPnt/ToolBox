@@ -40,7 +40,7 @@ class SideBar extends React.Component {
         event.preventDefault();
         var data = "All Category";
         this.props.actualCategory(data);
-        this.props.showAll();
+        this.props.filterTool(data);
     }
 
     render() {

@@ -17,10 +17,27 @@ const ListTool = ({showDesc, selectTool}) => ({
     },
     render() {
         console.log(this.props.See);
-        if(this.props.Tool && this.props.Tool.length > 0){
-        return (
-            <div className="ListTools ">
-                {this.props.Tool.map((tool, index) =>
+        if (this.props.Tool && this.props.Tool.length > 0) {
+            return (
+                <div className="ListTools ">
+                    {this.props.Tool.map((tool, index) =>
+                        <section className="newTool" key={index}>
+                            <button onClick={this.openDescription.bind(this, tool.id)}>
+                                <i className="material-icons">exit_to_app</i>More
+                            </button>
+                            <h4>{tool.data.title}</h4>
+                            <p>{tool.data.category}</p>
+                            <div className="desc">
+                                <code>{tool.data.description}</code>
+                            </div>
+                        </section>
+                    )}
+                    {this.props.See && <CodeTool/>}
+                </div>
+            )
+        } else if (this.props.filter === "All Category") {
+            return (
+                this.props.AllTool.map((tool, index) =>
                     <section className="newTool" key={index}>
                         <button onClick={this.openDescription.bind(this, tool.id)}>
                             <i className="material-icons">exit_to_app</i>More
@@ -31,10 +48,9 @@ const ListTool = ({showDesc, selectTool}) => ({
                             <code>{tool.data.description}</code>
                         </div>
                     </section>
-                )}
-                {this.props.See && <CodeTool/>}
-            </div>
-        )} else {
+                )
+            )
+        } else {
             return (
                 <div>
                     <p>No Card</p>
@@ -46,9 +62,11 @@ const ListTool = ({showDesc, selectTool}) => ({
 
 function mapStateToProps(state) {
     return {
-        Tool: state.ToolReducer.filtered,
+        Tool: state.ToolReducer.Tool.filter(tool => tool.data.category === state.ToolReducer.filter),
+        AllTool: state.ToolReducer.Tool,
         See: state.SeeCodeReducer,
-        ActualTool: state.ToolReducer.ActualTool
+        ActualTool: state.ToolReducer.ActualTool,
+        filter: state.ToolReducer.filter
     }
 }
 

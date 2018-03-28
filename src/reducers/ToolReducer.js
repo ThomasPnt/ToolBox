@@ -1,7 +1,7 @@
 const initialState = {
     ActualTool: [],
     Tool: [],
-    filtered: []
+    filter: "All Category"
 };
 
 const ToolReducer = (state = initialState, action) => {
@@ -16,14 +16,13 @@ const ToolReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 ActualTool: focus
             });
-        case 'FILTER_TOOL':
-            let filter = state.Tool.filter(tool => tool.data.category === action.payload);
+        case 'SET_FILTER_TOOL':
             return Object.assign({}, state, {
-                filtered: filter
+                filter: action.payload
             });
         case 'SHOW_ALL':
             return Object.assign({}, state, {
-                filtered: state.Tool
+                Tool: state.Tool
             });
         default:
             return state

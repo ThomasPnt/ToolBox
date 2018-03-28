@@ -21,7 +21,7 @@ export function selectTool(data) {
 
 export function filterTool(data){
     return {
-        type: 'FILTER_TOOL',
+        type: 'SET_FILTER_TOOL',
         payload: data
     }
 }
