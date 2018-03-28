@@ -6,6 +6,17 @@
   margin: 0 auto;
   margin-bottom: 10px;
   border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  left: 25%;
+  right: 25%;
+  a {
+    position: absolute;
+    right: 5%;
+    font-size: 40px;
+    top: 0%;
+    cursor: pointer;
+  }
   form {
     display: grid;
     width: 100%;
@@ -23,7 +34,7 @@
       border: 0px;
       padding: 5px;
     }
-    .submitool{
+    .submitool {
       margin-top: 20px;
       border: none;
       padding: 5px;
@@ -45,7 +56,7 @@
         background-color: rgba(198, 202, 213, 0.25);
         width: 100%;
       }
-      i{
+      i {
         position: absolute;
         right: 5px;
         font-size: 30px;

@@ -43,9 +43,15 @@ class NewTool extends React.Component {
         this.setState({description: event.target.value})
     }
 
+    closeForm(e){
+        e.preventDefault();
+        this.props.hideAddTool();
+    }
+
     render() {
         return (
-            <div className="formtool ">
+            <div className="formtool">
+                <a onClick={this.closeForm.bind(this)}>&times;</a>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <label htmlFor="title">Title</label>
                     <input name="title" type="text" onChange={this.handleChangeTitle.bind(this)}/>

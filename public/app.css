@@ -286,6 +286,18 @@
   margin: 0 auto;
   margin-bottom: 10px;
   border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  left: 25%;
+  right: 25%;
+}
+
+.formtool a {
+  position: absolute;
+  right: 5%;
+  font-size: 40px;
+  top: 0%;
+  cursor: pointer;
 }
 
 .formtool form {
