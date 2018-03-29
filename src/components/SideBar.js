@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link} from 'react-router-dom';
-import {addCategory, filterCat, filterTool, hideAddCategory} from "../actions/ActionTool";
+import {addCategory, filterCat, hideAddCategory} from "../actions/ActionTool";
 import {bindActionCreators} from "redux";
 import {actualCategory} from "../actions/ActionCategory";
 
