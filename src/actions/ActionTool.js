@@ -19,9 +19,9 @@ export function selectTool(data) {
     }
 }
 
-export function filterTool(data){
+export function filterCat(data){
     return {
-        type: 'SET_FILTER_TOOL',
+        type: 'SET_FILTER_CATEGORY',
         payload: data
     }
 }

@@ -32,7 +32,7 @@ const ListTool = ({showDesc, selectTool}) => ({
                         {this.props.See && <CodeTool/>}
                     </div>
                 )
-            } else if (this.props.filter === "All Category") {
+            } else if (this.props.filterCategory === "All Category") {
                 return (
                     <div className="ListTools ">{
                         this.props.AllTool.map((tool, index) =>
@@ -53,8 +53,8 @@ const ListTool = ({showDesc, selectTool}) => ({
             }
             else {
                 return (
-                    <div>
-                        <p>No Card</p>
+                    <div className="ListTools">
+                        <p id="noCard">No Card</p>
                     </div>
                 )
             }
@@ -64,11 +64,11 @@ const ListTool = ({showDesc, selectTool}) => ({
 
 function mapStateToProps(state) {
     return {
-        Tool: state.ToolReducer.Tool.filter(tool => tool.data.category === state.ToolReducer.filter),
+        Tool: state.ToolReducer.Tool.filter(tool => tool.data.category === state.ToolReducer.filterCategory),
         AllTool: state.ToolReducer.Tool,
         See: state.SeeCodeReducer,
         ActualTool: state.ToolReducer.ActualTool,
-        filter: state.ToolReducer.filter
+        filterCategory: state.ToolReducer.filterCategory
     }
 }
 

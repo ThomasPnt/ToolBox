@@ -5,7 +5,10 @@ import {bindActionCreators} from "redux";
 
 
 class Header extends React.Component {
-
+    search(e){
+        var data = e.target.value;
+        console.log(data);
+    }
     render() {
         return (
             <div className="header ">
@@ -18,7 +21,7 @@ class Header extends React.Component {
                 </section>
                 <section className="search">
                     <i className="material-icons">search</i>
-                    <input type="search"/>
+                    <input type="search" onChange={this.search.bind(this)}/>
                 </section>
             </div>
         )
@@ -34,7 +37,7 @@ function mapStateToProps(state) {
     return {
         CategoryReducer: state.CategoryReducer,
         Add: state.AddingCategory,
-        Actual: state.ActualCategoryReducer
+        Actual: state.ActualCategoryReducer,
     };
 }
 
