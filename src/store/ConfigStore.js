@@ -19,6 +19,7 @@ const reducers = combineReducers({
 export default function ConfigStore() {
     return createStore(
         reducers,
-        applyMiddleware(thunk)
+        applyMiddleware(thunk),
+        window.__PRELOADED_STATE__
     );
 }

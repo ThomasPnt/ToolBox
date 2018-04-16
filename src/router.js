@@ -1,15 +1,12 @@
-import React from 'react';
-import {Route, Switch} from "react-router-dom";
 import Global from "./components/Global";
+import { getSomeData } from './actions/Actions';
 
-const Router = () => {
-    return (
-        <div>
-            <Switch>
-                <Route path='/' component={Global}/>
-            </Switch>
-        </div>
-    )
-};
+const Router = [
+    {
+        path: "/",
+        component: Global,
+        loadData: () => getSomeData(),
+    }
+]
 
 export default Router;
