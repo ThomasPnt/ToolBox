@@ -40,4 +40,4 @@ app.use((req,res) => {
     </html>`)
 })
 
-server.listen(8080)
+server.listen()
